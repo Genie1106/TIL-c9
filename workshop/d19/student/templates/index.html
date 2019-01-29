@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Post Index</h1>
-    <a href="/posts/new/">New</a>
+    <h1>Your Information</h1>
     <ul>
-    {% for post in posts %}
-        <li><a href="/posts/{{post.pk}}/">{{ post.title }}</a></li>
-    {% endfor %}
+        {% for student in students %}
+        <li><a href="/{{student.pk}}/">{{student.name}}</a></li>
+        {% endfor %}
     </ul>
+    <a href="/submit">추가</a>
 </body>
 </html>

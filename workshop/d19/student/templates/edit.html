@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Information Edit</h1>
+    <form action="/{{student.pk}}/update" method="POST">
+        {% csrf_token %}
+        <p>name     : <input type="text" name="name" value="{{student.name}}"/></p>
+        <p>email    : <input type="text" name="email" value="{{student.email}}"/></p>
+        <p>birthday : <input type="text" name="birthday" value="{{student.birthday}}"/></p>
+        <p>age      : <input type="text" name="age" value="{{student.age}}"/></p>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>

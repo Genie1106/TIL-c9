@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Survey App!!</h1>
+    <a href="{% url 'Survey:create_survey' %}">New Survey</a>
+    
+    <ul>
+    {% for quest in quests %}
+        <h3>{{ quest.title }} <a href="{% url 'Survey:vote' %}">vote</a> </h3>
+        <li>{{ quest.content1 }}</li>
+        <li>{{ quest.content2 }}</li>
+        <li>{{ quest.content3 }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

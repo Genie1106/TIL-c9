@@ -12,7 +12,8 @@
     
     <ul>
     {% for quest in quests %}
-        <h3>{{ quest.title }} <a href="{% url 'Survey:vote' %}">vote</a> </h3>
+        <h3>{{ quest.title }}</h3>
+        <a href="{% url 'Survey:vote' %}">vote</a>
         <li>{{ quest.content1 }}</li>
         <li>{{ quest.content2 }}</li>
         <li>{{ quest.content3 }}</li>

@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Survey</h1>
+    <h2>{{ question.title }}</h2>
     <ul>
-    {% for quest in quests %}
-        <li>{{quest.title}}<a href="{% url 'Survey:vote' %}">vote</a></li>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.content }} : {{ choice.votes }} </li>
     {% endfor %}
     </ul>
 </body>

@@ -11,9 +11,9 @@
     <h2>{{ question.title }}</h2>
     <form action="{% url 'Survey:update' %}" method="post">
         {% csrf_token %}
-        <select name="Select">
+        <select name="select">
         {% for choice in question.choice_set.all %}
-          <option value="{{ choice.content }}" name="content">{{ choice.content }}</option>
+          <option value="{{ choice.pk }}">{{ choice.content }}</option>
         {% endfor %}
         </select>
         <input type="submit" value="Submit"/>

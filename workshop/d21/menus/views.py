@@ -5,14 +5,15 @@ from .models import Question,Choice
 def index(request):
     quests = Question.objects.all()
     return render(request,"index.html",{'quests':quests})
+
     
 def vote(request):
     question=Question.objects.last()
     return render(request,"vote.html",{'question':question})
     
 def update(request):
-    content=request.POST.get("content")
-    choice = Choice.objects.filter(content=content)
+    select=request.POST.get("select")
+    choice = Choice.objects.get(pk=select)
     choice.votes+=1
     choice.save()
     return redirect("Survey:result")

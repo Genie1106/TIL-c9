@@ -4,9 +4,9 @@
 
 {% block container%}
 
-<h1>마진이의 New Post</h1>
+<h1>마진이의 Post FORM</h1>
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% bootstrap_form post_form %}
     {% buttons %}

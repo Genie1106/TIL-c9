@@ -13,9 +13,7 @@ def explore(request):
     comment_form = CommentForm()
     return render(request, 'posts/list.html', {'posts':posts, 'comment_form':comment_form})
     
-    
-    
-    
+
 
 @login_required
 def list(request):

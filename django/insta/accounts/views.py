@@ -96,7 +96,6 @@ def profile_update(request):
 def follow(request, user_id):
     people = get_object_or_404(get_user_model(), id=user_id)
     
-    
     if request.user in people.followers.all():
         # 2. people을 unfollow 하기
         people.followers.remove(request.user)

@@ -12,7 +12,6 @@ def explore(request):
     posts = Post.objects.order_by('-id').all()
     comment_form = CommentForm()
     return render(request, 'posts/list.html', {'posts':posts, 'comment_form':comment_form})
-    
 
 
 @login_required
@@ -110,6 +109,7 @@ def comment_delete(request, post_id, comment_id):
         
     comment.delete()
     return redirect("posts:list")
+        
         
 @login_required
 def like(request, post_id):

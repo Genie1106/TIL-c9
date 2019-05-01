@@ -1,0 +1,13 @@
+<h1>LIST</h1>
+
+<a href="{% url 'person:create' %}">NEW</a>
+
+{% for person in persons %}
+<ul>
+    <hr>
+    last_name : {{ person.last_name }}<br>
+    email : {{ person.email }}<br>
+    age : {{ person.age }}<br>
+    <hr>
+</ul>
+{% endfor %}

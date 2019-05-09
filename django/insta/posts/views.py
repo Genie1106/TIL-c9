@@ -107,7 +107,6 @@ def comment_create(request, post_id):
                             'content' : comment.content,
                         })
     
-    
 
 @require_http_methods(['GET','POST'])
 def comment_delete(request, post_id, comment_id):
